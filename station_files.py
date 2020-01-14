@@ -43,3 +43,27 @@ print(values_month)
 # Store the output in a JSON file.
 with open('Seattle_values_month.json', 'w') as file:
     json.dump(values_month, file)
+
+
+# PART 2
+# ASSIGNMENT: Calculate the sum of the precipitation over the whole year
+values_year = sum(values_month)
+print(f' the precipitation for Seattle for the whole year is {values_year}')
+
+# ASSIGNMENT: Calculate the relative precipitation per month 
+# (percentage compared to the precipitation over the whole year)
+
+# empty list for relative values per month
+relative_values_month = []
+
+# make list with relative values for all months
+for value in values_month:
+    # calculate relative values and add to the empty list
+    relative_values_month.append(value*100/values_year)
+
+# print the relative values
+print(relative_values_month)
+
+# Store the output in a JSON file.
+with open('Seattle_relative_values_month.json', 'w') as file:
+    json.dump(relative_values_month, file)
